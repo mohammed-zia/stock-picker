@@ -21,7 +21,7 @@ def stock_picker(array)
         if array[left] < array[right]
             # Set current profit to the difference
             current_profit = array[right] - array[left]
-            # If the profit in the current iteration is greater than the max profit seen so far, append it and record the buy/sell "days"
+            # If the profit in the current iteration is greater than the max profit seen so far, overwrite it and record the buy/sell "days"
             if current_profit > max_profit
                 max_profit = current_profit
                 buy = left
