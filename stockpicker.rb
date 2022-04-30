@@ -9,14 +9,8 @@ def stock_picker(array)
 
   # For each price in prices
   array.each do
-    # If the right value is nil we've come to the end of the array
-    # Push the current best buy/sell values ("days") to an array and return it
-    if array[right] == nil
-        days.push(buy)
-        days.push(sell)
-        return days
-    # Else we still haven't come to the end of the array
-    else
+    # While loop to set iteration length
+    while right < array.size
         # If the buy price is less than the sell price 
         if array[left] < array[right]
             # Set current profit to the difference
@@ -34,6 +28,11 @@ def stock_picker(array)
         # Regardless of what happens, move the sell day forward
         right += 1
     end
+    # If the while loop breaks we've come to the end of the array
+    # Push the current best buy/sell values ("days") to an array and return it
+    days.push(buy)
+    days.push(sell)
+    return days
   end
 end
 
